@@ -1,7 +1,7 @@
-import { useCount } from "./useCount";
 import { useObserver, useLocalStore } from "mobx-react";
+import { useMount, useUnmount } from "react-use";
+import { useCount } from "./useCount";
 import { store } from "../../stores/page1Store";
-import { useUnmount } from "react-use";
 
 export default function Page1() {
   const { count, add } = useCount();
@@ -10,6 +10,10 @@ export default function Page1() {
   const handleClick = () => {
     add();
   };
+
+  useMount(() => {
+    localStore.getUsers();
+  });
 
   useUnmount(() => {
     localStore.reset();
@@ -22,6 +26,13 @@ export default function Page1() {
       {count}
       <button onClick={handleClick}>click</button>
       <button onClick={localStore.setCount}>change name</button>
+      <button onClick={localStore.addUser}>Add user</button>
+      <p>user 总人数：{localStore.userCount}</p>
+      <ul>
+        {localStore.users.map(({ name }, _index) => (
+          <li key={_index}>{name}</li>
+        ))}
+      </ul>
     </div>
   ));
 }

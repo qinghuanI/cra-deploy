@@ -28,7 +28,7 @@ module.exports = {
   plugins: [],
   rules: {
     // base
-    "no-console": 2,
+    "no-console": 0,
     "react/react-in-jsx-scope": 0,
     camelcase: 0,
     "arrow-parens": 0,
