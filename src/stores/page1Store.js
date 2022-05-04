@@ -1,11 +1,11 @@
-import { action, computed, flow, makeAutoObservable, observable } from "mobx";
+import { makeAutoObservable } from "mobx";
 
 class Store {
-  @observable num = 1;
+  num = 1;
 
-  @observable users = [];
+  users = [];
 
-  @computed get userCount() {
+  get userCount() {
     return this.users.length;
   }
 
@@ -13,26 +13,22 @@ class Store {
     makeAutoObservable(this);
   }
 
-  @action
   setCount = () => {
     this.num++;
   };
 
-  @action
   reset = () => {
     this.num = 1;
   };
 
-  @action.bound
-  getUsers = flow(function* () {
+  *getUsers() {
     try {
       this.users = yield Promise.resolve([{ name: "John" }, { name: "Jane" }]);
     } catch (e) {
       console.error("fetch users error", e);
     }
-  });
+  }
 
-  @action
   addUser = () => {
     this.users = this.users.concat({ name: "qin" });
   };
