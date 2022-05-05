@@ -2,6 +2,7 @@
   "name": "cra-deploy",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://qinghuanI.github.io/cra-deploy",
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.17.9",
     "@sentry/react": "^6.19.7",
