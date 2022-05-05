@@ -21,4 +21,4 @@ jobs:
         GITHUB_TOKEN: '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'
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: build
+        FOLDER: ./build
