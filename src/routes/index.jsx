@@ -1,19 +1,18 @@
-import Page1 from "../pages/page1";
-import Page2 from "../pages/page2";
-import { Navigate } from "react-router-dom";
+import { Navigate } from 'react-router-dom';
+import { load } from './utils';
 
 const routes = [
   {
-    path: "/",
+    path: '/',
     element: <Navigate to="/page1" />,
   },
   {
-    path: "/page1",
-    element: <Page1 />,
+    path: '/page1',
+    element: load('page1'),
   },
   {
-    path: "/page2",
-    element: <Page2 />,
+    path: '/page2',
+    element: load('page2'),
   },
 ];
 
