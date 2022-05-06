@@ -1,4 +1,5 @@
 import { makeAutoObservable } from 'mobx';
+import { request } from '../utils/request';
 
 class Store {
   num = 1;
@@ -23,7 +24,7 @@ class Store {
 
   *getUsers() {
     try {
-      this.users = yield fetch('http://localhost:3000/users').then((res) => res.json());
+      this.users = yield request({ channel: '/users' });
     } catch (e) {
       console.error('fetch users error', e);
     }
