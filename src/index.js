@@ -20,8 +20,10 @@ Sentry.init({
   tracesSampleRate: 1.0,
 });
 
+const isDev = process.env.NODE_ENV === 'development';
+
 ReactDOM.render(
-  <Router basename={process.env.PUBLIC_URL}>
+  <Router basename={isDev ? '/' : process.env.PUBLIC_URL}>
     <App />
   </Router>,
   document.getElementById('root')
