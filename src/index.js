@@ -8,6 +8,7 @@ import { BrowserTracing } from '@sentry/tracing';
 
 import App from './App';
 import './styles/index.css';
+import 'antd/dist/antd.css';
 
 Sentry.init({
   dsn: 'https://0b776b79ef7f42909892d3f3b0cb84fb@o1233344.ingest.sentry.io/6382094',
@@ -23,7 +24,7 @@ ReactDOM.render(
   <BrowserRouter>
     <App />
   </BrowserRouter>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
