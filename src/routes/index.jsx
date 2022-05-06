@@ -4,7 +4,7 @@ import { load } from './utils';
 const routes = [
   {
     path: '/',
-    element: <Navigate to="/page1" />,
+    element: <Navigate to='/page1' />,
   },
   {
     path: '/page1',
@@ -13,6 +13,10 @@ const routes = [
   {
     path: '/page2',
     element: load('page2'),
+  },
+  {
+    path: '*',
+    element: <Navigate to='/page1' />,
   },
 ];
 
