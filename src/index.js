@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
 import * as Sentry from '@sentry/react';
@@ -21,9 +21,9 @@ Sentry.init({
 });
 
 ReactDOM.render(
-  <HashRouter>
+  <Router basename={process.env.PUBLIC_URL}>
     <App />
-  </HashRouter>,
+  </Router>,
   document.getElementById('root')
 );
 
