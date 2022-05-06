@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable } from 'mobx';
 
 class Store {
   num = 1;
@@ -23,14 +23,14 @@ class Store {
 
   *getUsers() {
     try {
-      this.users = yield Promise.resolve([{ name: "John" }, { name: "Jane" }]);
+      this.users = yield fetch('http://localhost:3000/users').then((res) => res.json());
     } catch (e) {
-      console.error("fetch users error", e);
+      console.error('fetch users error', e);
     }
   }
 
   addUser = () => {
-    this.users = this.users.concat({ name: "qin" });
+    this.users = this.users.concat({ name: 'qin' });
   };
 }
 export const store = new Store();
