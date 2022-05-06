@@ -17,8 +17,9 @@ jobs:
         CI=false npm run build
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4.3.3
-      env:
+      with:
         GITHUB_TOKEN: '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'
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
-        PUBLISH_DIR: ./build
+        FOLDER: build
+        PUBLISH_DIR: build
