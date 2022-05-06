@@ -21,7 +21,7 @@ Sentry.init({
 });
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <App />
   </BrowserRouter>,
   document.getElementById('root')
