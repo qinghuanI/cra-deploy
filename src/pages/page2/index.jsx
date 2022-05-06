@@ -1,6 +1,7 @@
 import styles from './index.module.scss';
 import { Button } from 'antd';
 import { useNavigate } from 'react-router';
+import CopyRight from '../../components/CopyRight';
 
 export default function Page2() {
   const navigate = useNavigate();
@@ -17,6 +18,7 @@ export default function Page2() {
       >
         to page1
       </Button>
+      <CopyRight text='Talkdesk All' />
     </div>
   );
 }
